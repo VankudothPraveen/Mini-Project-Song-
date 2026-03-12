@@ -24,7 +24,7 @@ list of songs
   
 ---
 
-deleting
+deleting & edit
 
 ---
 
