@@ -8,9 +8,14 @@
 
 | Song Library | Add / Edit Track |
 |:---:|:---:|
-| ![Library Page](docs/preview-list.png) | ![Form Page](docs/preview-form.png) |
+| ![Library Page](<img width="921" height="467" alt="Screenshot 2026-03-13 001955" src="https://github.com/user-attachments/assets/89fb5bbc-5ec1-464d-98b2-4e1a2cdcc73e" />
+) | ![Form Page](<img width="960" height="474" alt="Screenshot 2026-03-13 002014" src="https://github.com/user-attachments/assets/e7f5047c-2259-4dbd-9ca2-91a15700ce35" />
+) |
+---
+deleting
+---
 
-> Dark violet-rose glassmorphism theme with animated waveforms, gradient text, vinyl card animations, and premium micro-interactions.
+<img width="946" height="467" alt="Screenshot 2026-03-13 002038" src="https://github.com/user-attachments/assets/e6a34322-0b5f-45fb-9d27-3127e835e7ab" />
 
 ---
 
@@ -111,109 +116,5 @@ The frontend communicates with the **Spring Boot backend** running on `http://lo
 
 ---
 
-## 🚀 Getting Started
 
-### Prerequisites
-
-- **Node.js** ≥ 18.x → [Download](https://nodejs.org/)
-- **npm** ≥ 10.x (comes with Node)
-- **Angular CLI** ≥ 21.x
-- **Java** ≥ 17 (for the backend)
-- **Maven** (for the backend)
-
----
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-username/song-vault.git
-cd song-vault
-```
-
----
-
-### 2. Start the Backend (Spring Boot)
-
-```bash
-# From the backend project root
-cd backend
-mvn spring-boot:run
-```
-
-> The backend API will start at **http://localhost:8080**
-
----
-
-### 3. Start the Frontend (Angular)
-
-```bash
-cd song-frontend
-npm install
-npm start
-```
-
-> The app will open at **http://localhost:4200**
-
----
-
-## 🌐 Application Routes
-
-| Route | Component | Description |
-|---|---|---|
-| `/` | Redirect | Redirects to `/songs` |
-| `/songs` | `SongListComponent` | Displays all songs in card grid |
-| `/songs/new` | `SongFormComponent` | Form to add a new track |
-| `/songs/edit/:id` | `SongFormComponent` | Form to edit an existing track |
-
----
-
-## 🎨 UI Design System
-
-The app uses a custom CSS design system defined in `styles.css`:
-
-- **Color Palette**: Deep Violet (`hsl(263,70%,8%)`) + Rose (`hsl(340,90%,65%)`) + Amber
-- **Glassmorphism**: `backdrop-filter: blur` cards with translucent surfaces
-- **Typography**: `Outfit` (display/headings) + `Inter` (body)
-- **Animations**: Waveform bars, vinyl spin, orb drift, pulse glow, slide-in toasts
-- **Buttons**: Gradient violet→rose with spring-physics hover scale
-
----
-
-## 📦 Available Scripts
-
-```bash
-npm start          # Start development server (http://localhost:4200)
-npm run build      # Build for production (output: dist/)
-npm run watch      # Build in watch mode for development
-npm test           # Run unit tests
-```
-
----
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/my-feature`)
-3. Commit your changes (`git commit -m 'Add some feature'`)
-4. Push to the branch (`git push origin feature/my-feature`)
-5. Open a Pull Request
-
----
-
-## 👨‍💻 Author
-
-**Praveen** — Internship Mini Project @ Hartford  
-📅 March 2026
-
----
-
-## 📄 License
-
-This project is for educational / internship purposes.  
-Feel free to use it as a reference or learning resource.
-
----
-
-<div align="center">
-  Made with ❤️ and 🎵 using Angular + Spring Boot
 </div>
