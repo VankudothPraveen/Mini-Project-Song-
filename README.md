@@ -6,13 +6,26 @@
 
 ## 📸 Preview
 
-| Song Library | Add / Edit Track |
-|:---:|:---:|
-| ![Library Page](<img width="921" height="467" alt="Screenshot 2026-03-13 001955" src="https://github.com/user-attachments/assets/89fb5bbc-5ec1-464d-98b2-4e1a2cdcc73e" />
-) | ![Form Page](<img width="960" height="474" alt="Screenshot 2026-03-13 002014" src="https://github.com/user-attachments/assets/e7f5047c-2259-4dbd-9ca2-91a15700ce35" />
-) |
 ---
+
+adding
+
+---
+
+<img width="921" height="467" alt="Screenshot 2026-03-13 001955" src="https://github.com/user-attachments/assets/124fb076-dbb4-41d0-80c4-bb48bf34d64b" />
+
+---
+
+list of songs
+
+---
+
+<img width="960" height="474" alt="Screenshot 2026-03-13 002014" src="https://github.com/user-attachments/assets/ec9a3017-181b-45f4-a4ff-212deb1661c3" />
+  
+---
+
 deleting
+
 ---
 
 <img width="946" height="467" alt="Screenshot 2026-03-13 002038" src="https://github.com/user-attachments/assets/e6a34322-0b5f-45fb-9d27-3127e835e7ab" />
