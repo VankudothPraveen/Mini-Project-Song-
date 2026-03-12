@@ -1,0 +1,41 @@
+<!-- ── Premium Navigation ── -->
+<nav class="premium-nav">
+  <!-- Brand -->
+  <a routerLink="/songs" class="flex items-center gap-4 no-underline group" style="text-decoration:none;">
+    <div class="glow-icon" style="width:52px;height:52px;border-radius:1rem;">
+      <span style="font-size:1.5rem;">🎵</span>
+    </div>
+    <div class="flex flex-col" style="gap:1px;">
+      <span class="gradient-text" style="font-family:var(--font-display);font-size:1.75rem;font-weight:900;letter-spacing:-0.04em;line-height:1;">
+        SongVault
+      </span>
+      <span style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--accent-violet);opacity:0.55;font-weight:800;font-family:var(--font-display);">
+        Music Library
+      </span>
+    </div>
+  </a>
+
+  <!-- Nav links -->
+  <div class="flex items-center" style="gap:2rem;">
+    <a routerLink="/songs"
+      style="color:hsla(263,30%,80%,0.45);font-size:0.65rem;font-weight:900;text-transform:uppercase;letter-spacing:0.4em;text-decoration:none;transition:color 0.3s ease;"
+      onmouseover="this.style.color='var(--accent-violet)'"
+      onmouseout="this.style.color='hsla(263,30%,80%,0.45)'">
+      Library
+    </a>
+
+    <!-- Animated waveform (decorative) -->
+    <div class="waveform" style="opacity:0.5;">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <a routerLink="/songs/new" class="neon-btn" style="text-decoration:none;padding:0.75rem 1.75rem;">
+      <span style="font-size:1rem;margin-right:0.25rem;">+</span> Add Track
+    </a>
+  </div>
+</nav>
+
+<!-- Main content area -->
+<main style="max-width:1300px;margin:0 auto;padding:2.5rem clamp(1rem,4vw,3rem);min-height:calc(100vh - 80px);position:relative;z-index:1;">
+  <router-outlet></router-outlet>
+</main>

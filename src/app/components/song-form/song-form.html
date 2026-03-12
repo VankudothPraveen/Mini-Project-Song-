@@ -1,0 +1,129 @@
+<div style="display:flex;justify-content:center;padding:3rem 1rem 6rem;">
+  <div class="glass-card" style="width:100%;max-width:680px;padding:0;overflow:hidden;">
+
+    <!-- Pulse bg decoration -->
+    <div class="pulse-bg" style="opacity:0.2;"></div>
+
+    <!-- ── Form Header ── -->
+    <div style="padding:2.5rem 2.75rem;border-bottom:1px solid var(--border-dim);background:hsla(263,60%,5%,0.5);position:relative;z-index:1;">
+      <div style="display:flex;align-items:center;gap:1.25rem;">
+        <div style="width:56px;height:56px;border-radius:1.25rem;background:var(--grad-hero);display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 10px 30px -8px hsla(263,90%,60%,0.5);flex-shrink:0;">
+          {{ isEditing ? '✏️' : '🎵' }}
+        </div>
+        <div>
+          <h2 class="gradient-text" style="font-size:2.25rem;font-family:var(--font-display);font-weight:900;letter-spacing:-0.04em;line-height:1;">
+            {{ isEditing ? 'Edit Track' : 'Add Track' }}
+          </h2>
+          <p style="font-size:0.65rem;font-weight:900;letter-spacing:0.4em;text-transform:uppercase;color:hsla(263,40%,70%,0.45);margin-top:0.4rem;">
+            {{ isEditing ? 'Update track details' : 'Add a new song to your vault' }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Error Banner ── -->
+    <div *ngIf="error" style="margin:1.5rem 2.75rem 0;padding:1rem 1.25rem;border-radius:1rem;background:hsla(0,60%,12%,0.8);border:1px solid hsla(0,60%,50%,0.3);display:flex;align-items:center;gap:1rem;">
+      <span style="font-size:1.25rem;">⚠️</span>
+      <span style="font-size:0.8rem;font-weight:700;color:hsl(0,70%,70%);letter-spacing:0.02em;">{{ error }}</span>
+    </div>
+
+    <!-- ── Form Body ── -->
+    <form (ngSubmit)="onSubmit()" #songForm="ngForm" style="padding:2.75rem;display:flex;flex-direction:column;gap:2rem;position:relative;z-index:1;">
+
+      <!-- Title -->
+      <div class="form-group">
+        <label for="title" class="form-label">Track Title</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          [(ngModel)]="song.title"
+          required
+          placeholder="e.g. Midnight Drive"
+          style="font-size:1.1rem;font-weight:600;" />
+      </div>
+
+      <!-- Artist -->
+      <div class="form-group">
+        <label for="artist" class="form-label">Artist Name</label>
+        <input
+          type="text"
+          id="artist"
+          name="artist"
+          [(ngModel)]="song.artist"
+          required
+          placeholder="e.g. The Weeknd" />
+      </div>
+
+      <!-- Genre + Duration (2 columns) -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+        <div class="form-group">
+          <label for="genre" class="form-label">Genre</label>
+          <input
+            type="text"
+            id="genre"
+            name="genre"
+            [(ngModel)]="song.genre"
+            required
+            placeholder="e.g. Pop, R&B" />
+        </div>
+
+        <div class="form-group">
+          <label for="duration" class="form-label">Duration (mm:ss)</label>
+          <input
+            type="text"
+            id="duration"
+            name="duration"
+            [(ngModel)]="durationString"
+            required
+            placeholder="03:45"
+            style="font-family:monospace;font-size:1.05rem;font-weight:700;letter-spacing:0.05em;" />
+        </div>
+      </div>
+
+      <!-- Release Date -->
+      <div class="form-group">
+        <label for="releaseDate" class="form-label">Release Date</label>
+        <input
+          type="date"
+          id="releaseDate"
+          name="releaseDate"
+          [(ngModel)]="song.releaseDate"
+          required />
+      </div>
+
+      <!-- Divider -->
+      <div style="height:1px;background:var(--border-dim);margin:0.5rem 0;"></div>
+
+      <!-- Action buttons -->
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <button
+          id="submit-song-btn"
+          type="submit"
+          [disabled]="isLoading"
+          class="neon-btn"
+          style="flex:2;padding:1rem 1.5rem;font-size:0.85rem;min-width:160px;">
+          <span *ngIf="!isLoading">
+            {{ isEditing ? '✅ Save Changes' : '🚀 Add Track' }}
+          </span>
+          <span *ngIf="isLoading" style="display:flex;align-items:center;gap:0.75rem;">
+            <span class="spinner" style="width:18px;height:18px;border-width:2px;border-top-color:white;border-right-color:hsla(0,0%,100%,0.4);"></span>
+            Saving...
+          </span>
+        </button>
+
+        <button
+          id="cancel-song-btn"
+          type="button"
+          (click)="onCancel()"
+          [disabled]="isLoading"
+          style="flex:1;padding:1rem 1.5rem;border-radius:1rem;border:1.5px solid var(--border-soft);background:hsla(0,0%,100%,0.04);color:hsla(263,20%,80%,0.65);font-family:var(--font-display);font-size:0.75rem;font-weight:900;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:all 0.3s ease;min-width:100px;"
+          onmouseover="this.style.background='hsla(340,60%,30%,0.15)';this.style.borderColor='hsla(340,60%,50%,0.35)';this.style.color='var(--accent-rose)'"
+          onmouseout="this.style.background='hsla(0,0%,100%,0.04)';this.style.borderColor='var(--border-soft)';this.style.color='hsla(263,20%,80%,0.65)'">
+          Cancel
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
